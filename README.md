@@ -5,7 +5,7 @@
   
   
   
-   Our goal is to address this problem by creating a Choose-Your-Own-Adventure style java program. This entails a series of prompts that the user can follow in order to find information that is most suitable for their individual situation. All information presented in this project are sourced from reputable sources.
+   Our goal is to address this problem by creating a Choose-Your-Own-Adventure style java program. This entails a series of prompts that the user can follow in order to find information that is most suitable for their individual situation. All information presented in this project is sourced from reputable sources.
   
   
   
