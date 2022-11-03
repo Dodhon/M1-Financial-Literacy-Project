@@ -1,12 +1,15 @@
 import java.util.Scanner;
-
 public class terminalProject{
     static boolean mainMenu = true;
     static Scanner in = new Scanner(System.in);
     public static void main(String[] args){
-        int userInput = -1;
+        int storedUserType = -1; // Default value to fix java.lang error
+        int userInput = -1; // ^
         System.out.println("Which are you? (1-3)" + '\n' + "1: Under 18" + '\n' + "2: Over 18, not a credit card owner" + '\n' + "3: Over 18 and credit card owner");
-        int storedUserType = in.nextInt();
+        storedUserType = in.nextInt();
+        while (checkRange(1, 3, storedUserType) == false){
+            storedUserType = in.nextInt();
+        }
         while (mainMenu == true){
             System.out.println("Welcome to M1 Finance's credit literacy program. Below are options you can explore for your selected group!");
             System.out.println("-------------------------------------------------------------------------------------------------------------------");
@@ -15,6 +18,9 @@ public class terminalProject{
                 mainMenu = false;
                 System.out.println("1: Being smart with money and building good spending habits" + '\n' + "2: Important of learning the difference between credit and debit " + '\n' + "3: Learning how to manage money" + '\n');
                 userInput = in.nextInt();
+                while (checkRange(1, 3, userInput) == false){
+                    userInput = in.nextInt();
+                }
                 if (userInput == 1){
                     System.out.println("https://millennialmoney.com/teens-financial-independence/");
                     System.out.println("This site goes through key points on being smart with money and building habits that will transfer over to your future. ");
@@ -36,6 +42,9 @@ public class terminalProject{
                 mainMenu = false;
                 System.out.println("1: Basic key financial tips " + '\n' + "2: How to get a credit card and how to manage it");
                 userInput = in.nextInt();
+                while (checkRange(1, 2, userInput) == false){
+                    userInput = in.nextInt();
+                }
                 if (userInput == 1){
                     System.out.println("https://www.investopedia.com/articles/younginvestors/08/eight-tips.asp ");
                     System.out.println("This site explains basic key financial tips for young adults. ");
@@ -52,6 +61,9 @@ public class terminalProject{
                 mainMenu = false;
                 System.out.println("1: How to build a good credit score " + '\n' + "2: Main causes of a bad credit score" + '\n' + "3: How to fix a bad credit score" + '\n' + "4: How to maintain a good credit score" + '\n' + "5: How to use your credit card safely");
                 userInput = in.nextInt();
+                while (checkRange(1, 5, userInput) == false){
+                    userInput = in.nextInt();
+                }
                 if (userInput == 1){
                     System.out.println("https://www.cnbc.com/select/how-to-build-credit-and-achieve-a-good-credit-score/");
                     System.out.println("This site gives information on how to build a good credit score");
@@ -81,15 +93,39 @@ public class terminalProject{
         }
     }
 
+    // Method that asks user if they would like to return to main menu
     public static void returnMenu(){
+        boolean correctCheck = false;
         System.out.println("-----------------------------------------------");
         System.out.println("Return to main menu? (1 for YES)");
-        int userInput= in.nextInt();
+        while (!correctCheck){
+            int userInput= in.nextInt();
             if (userInput == 1){
                 System.out.println("Returning to main menu");
+                correctCheck = true;
                 mainMenu = true;
             }
+            else{
+                System.out.println("Input out of range, try again...");
+                correctCheck = false;
+            }
+        }
     }
 
-
+    // Method that will check the range of the userInput and return true if it matches the allowed range, and false if not
+    public static boolean checkRange(int lb, int ub, int userInput){
+        boolean correctCheck = false;
+        while (!correctCheck){
+            if (userInput < lb || userInput > ub){
+                System.out.println("Input out of range, try again...");
+                correctCheck = false;
+                break;
+            }
+            else{
+                correctCheck = true;
+                break;
+            }
+        }
+        return correctCheck;
+    }
 }
