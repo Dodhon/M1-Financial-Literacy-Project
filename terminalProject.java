@@ -109,34 +109,61 @@ public class terminalProject{
             if (storedUserType == 3){
                 System.out.println("You are already a credit card owner and over the age of 18. Please select what you would like to explore!");
                 mainMenu = false;
-                System.out.println("1: How to build a good credit score " + '\n' + "2: Main causes of a bad credit score" + '\n' + "3: How to fix a bad credit score" + '\n' + "4: How to maintain a good credit score" + '\n' + "5: How to use your credit card safely");
+                System.out.println("1: How to build a good credit score " + '\n' + "2: Main causes of a bad credit score and how to fix it" + '\n' + "3: How to use a credit card safely");
                 userInput = in.nextInt();
-                while (checkRange(1, 5, userInput) == false){
+                while (checkRange(1, 3, userInput) == false){
                     userInput = in.nextInt();
                 }
                 if (userInput == 1){
-                    System.out.println("https://www.cnbc.com/select/how-to-build-credit-and-achieve-a-good-credit-score/");
-                    System.out.println("This site gives information on how to build a good credit score");
+                    System.out.println("Making payments on time and keeping your balances low are the two most important factors when it comes to building credit" + '\n'
+                    + "Credit cards aren’t the only option for building credit. If you have a personal loan, student loan,auto loan,or mortgage you want to make sure you are managing these responsibly." + '\n'
+                    + "Pay your loans on time,every time" + '\n'
+                    + "Don’t get close to your credit limit" + '\n'
+                    + "A long credit history will help your score" + '\n'
+                    + "Making payments on time and keeping your balances low are the two most important factors when it comes to building credit" + '\n'
+                    + "Credit cards aren’t the only option for building credit. If you have a personal loan, student loan,auto loan,or mortgage you want to make sure you are managing these responsibly." + '\n'
+                    + "1. Pay your loans on time,every time" + '\n'
+                    + "2. Don’t get close to your credit limit" + '\n'
+                    + "3. A long credit history will help your score" + '\n'
+                    + "4. Only apply for credit that you need" + '\n'
+                    + "5. Fact check your credit reports");
+                    System.out.println("Source: https://www.cnbc.com/select/how-to-build-credit-and-achieve-a-good-credit-score/");
                     returnMenu();
                 }
                 else if (userInput == 2){
-                    System.out.println("https://corporatefinanceinstitute.com/resources/commercial-lending/bad-credit-causes/");
-                    System.out.println("This site explains the main reasons for a bad credit score");
+                    System.out.println("Causes of bad credit score and how to fix" + '\n'
+                    + "1. Late payments" + '\n'
+                    + "2. Collection accounts" + '\n'
+                    + "3. Bankruptcy filing" + '\n'
+                    + "4. Charge-off" + '\n'
+                    + "5. Defaulting on loans" + '\n'
+                    + "How to fix it:" + '\n'
+                    + "1. Pay your loans on time,every time" + '\n'
+                    + "2. Don’t get close to your credit limit" + '\n'
+                    + "3. A long credit history will help your score" + '\n'
+                    + "4. Only apply for credit that you need" + '\n'
+                    + "5. Fact check your credit reports");
+                    System.out.println("Sources: https://corporatefinanceinstitute.com/resources/commercial-lending/bad-credit-causes/" + '\n' + "https://www.experian.com/blogs/ask-experian/credit-education/improving-credit/how-to-fix-a-bad-credit-score/");
                     returnMenu();
                 }
                 else if (userInput == 3){
-                    System.out.println("https://www.experian.com/blogs/ask-experian/credit-education/improving-credit/how-to-fix-a-bad-credit-score/");
-                    System.out.println("This site explains tips on how to build a good credit score");
-                    returnMenu();
-                }
-                else if (userInput == 4){
-                    System.out.println("https://www.consumerfinance.gov/ask-cfpb/how-do-i-get-and-keep-a-good-credit-score-en-318/");
-                    System.out.println("This site explains how to maintain a good credit score");
-                    returnMenu();
-                }
-                else if (userInput == 5){
-                    System.out.println("https://financer.com/us/how-to/use-your-card-safely/");
-                    System.out.println("This site explains how to safely use your credit card");
+                    System.out.println("Credit Scores Evaluation & using credit card safely" + '\n'
+
+                    + "Payment history (35%): Whether you’ve paid past credit accounts on time"  + '\n'
+                    + "Amounts owed (30%): The total amount of credit and loans you’re using compared to your total credit limit, also known as your utilization rate"  + '\n'
+                    + "Length of credit history (15%): The length of time you’ve had credit"  + '\n'
+                    + "New credit (10%): How often you apply for and open new accounts"  + '\n'
+                    + "Credit mix (10%): The variety of credit products you have, including credit cards, installment loans, finance company accounts, mortgage loans and so on"  + '\n'
+                    + '\n'
+                    + "Using credit cards safely"  + '\n'
+                    + "1. Use your credit card on trusted websites only"  + '\n'
+                    + "2. Use your computer to make online purchases. (using public computers puts you at risk of getting your information stolen)"  + '\n'
+                    + "3. Protect your computer against viruses(keeping your information safe is important)"  + '\n'
+                    + "4. Always get a credit card receipt(even online).(Use the billing statement to compare and verify that the totals match)"  + '\n'
+                    + "5. Make sure to report lost or stolen cards immediately."  + '\n'
+                    + "6. Keep your passwords secret and hard to guess(protecting your information)"  + '\n'
+                    + "7. Store your pin safely and secure your card.");
+                    System.out.println("Source: https://financer.com/us/how-to/use-your-card-safely/");
                     returnMenu();
                 }
             }
