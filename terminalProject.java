@@ -11,10 +11,12 @@ public class terminalProject{
             storedUserType = in.nextInt();
         }
         while (mainMenu == true){
+        	System.out.println();
             System.out.println("Welcome to M1 Finance's credit literacy program. Below are options you can explore for your selected group!");
             System.out.println("-------------------------------------------------------------------------------------------------------------------");
             if (storedUserType == 1){
                 System.out.println("You are under 18: Please select what you would like to explore!");
+                System.out.println(" "); //added a blank space line
                 mainMenu = false;
                 System.out.println("1: 10 ways teens can prepare for financial independance" + '\n' + "2: 8 Tips to help you build credit " + '\n' + "3: Learning how to manage money" + '\n');
                 userInput = in.nextInt();
@@ -22,7 +24,7 @@ public class terminalProject{
                     userInput = in.nextInt();
                 }
                 if (userInput == 1){
-                    System.out.println("10 Ways Teens can Prepare for Financial Independence" + '\n'
+                    System.out.println("~~~~~10 Ways Teens can Prepare for Financial Independence~~~~~" + '\n'
                     + "1. Get good grades in school" + '\n'
                     + "2. Get a job and save the money you earn" + '\n'
                     + "3. Develop a budget and track your expenses, including savings, which should be treated as an expense." + '\n'
@@ -37,8 +39,8 @@ public class terminalProject{
                     returnMenu();
                 }
                 else if (userInput == 2){
-                    System.out.println("Since you can get a credit card under 18 as an authorized user on an adults account, this site focuses on the importance on learning the difference between debit and credit and how to better manage money. ");
-                    System.out.println("8 tips to help develop early credit" + '\n'
+                    System.out.println(" "); //the importance on learning the difference between debit and credit and how to better manage money
+                    System.out.println("~~~~~8 Tips to Help Develop Early Credit~~~~~" + '\n'
                     + "1. Learn early- Research shows that children develop behaviors around money as early as 3 years old" + '\n'
                     + "2. Learn the difference between a debit card and a credit card" + '\n'
                     + "3. Have incentives to save your money" + '\n'
@@ -51,14 +53,17 @@ public class terminalProject{
                     returnMenu();
                 }
                 else if (userInput == 3){
-                    System.out.println("This site explains how to manage your money; an important skill to have since teens are just entering the real world. This will teach them how to budget their money.");
+                	 System.out.println("~~~~~Learning how to Manage Money~~~~~");
+                    System.out.println("This site explains how to manage your money; an important skill to have since teens are just entering the real world.");
                     System.out.println("Budgeting for teens is important, as it helps you learn how to manage your spending and develop good habits with your money." + '\n'
-                     + "Thus, you should learn the basics of budgeting as early as 13 or when you start earning money of your own, and learn the difference between needs and wants as a fundamental part of budgeting." + '\n'
-                     + "Budgeting apps and prepaid credit cards can make it easier to learn the essentials of budgeting.");
+                    				+ "Thus, you should learn the basics of budgeting as early as 13 or when you start earning money of your own." + '\n' 
+                    				+ "A fundamental part of budgeting is to learn the difference between needs and wants and" + '\n'
+                    				+ "Budgeting apps or prepaid credit cards can make it easier to grasp the essentials.");
                     System.out.println("Source: https://www.thebalancemoney.com/how-to-teach-your-teen-about-budgeting-4160105");
                     returnMenu();
                  }   
             }
+            						  //-------------------------------------------------------------------------------------------------------------------
             if (storedUserType == 2){
                 System.out.println("You are over 18 and do not have a credit card yet. Please select what you would like to explore!");
                 mainMenu = false;
@@ -68,9 +73,9 @@ public class terminalProject{
                     userInput = in.nextInt();
                 }
                 if (userInput == 1){
-                    System.out.println("8 Essential Finance Tips for Young Adults " + '\n' 
+                    System.out.println("~~~~~8 Essential Finance Tips for Young Adults~~~~~ " + '\n' 
                     + "The sooner you start learning to manage your money, the better your chance of financial success will be throughout your life." + '\n'
-                    + " If you are just starting out, there are eight steps you can take now to protect your financial health, start saving, and build wealth throughout your life-");
+                    + "If you are just starting out, there are eight steps you can take now to protect your financial health, start saving, and build wealth throughout your life-");
                     System.out.println("1.Pay with cash, not only credit." +'\n'
                     + "2. Educate yourself on personal finance, and beware of bad advice." +'\n'
                     + "3. Learn to budget, know where your money goes" + '\n'
@@ -173,12 +178,12 @@ public class terminalProject{
     // Method that asks user if they would like to return to main menu
     public static void returnMenu(){
         boolean correctCheck = false;
-        System.out.println("-----------------------------------------------");
+        System.out.println("-------------------------------------------------------------------------------------------------------------------");
         System.out.println("Return to main menu? (1 for YES)");
         while (!correctCheck){
             int userInput= in.nextInt();
             if (userInput == 1){
-                System.out.println("Returning to main menu");
+                System.out.println(">Returning to main menu...");  //added three dots for fun
                 correctCheck = true;
                 mainMenu = true;
             }
